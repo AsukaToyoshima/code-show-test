@@ -1,22 +1,18 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html>
 <head>
     <meta charset="UTF-8">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
     <style>
-        body { margin: 0; padding: 0; background: #2d2d2d; }
-        pre { margin: 0 !important; border-radius: 0 !important; }
+        body { margin: 0; padding: 0; background-color: #2d2d2d; }
+        pre { margin: 0 !important; border-radius: 0; border: none; }
         
-        /* <span>タグに当てる「変更箇所」用スタイル */
-        .code-highlight-added {
-            background-color: rgba(76, 175, 80, 0.3); /* 薄い緑色 */
+        /* 変更箇所を span タグで囲んだ時のスタイル */
+        .highlight-added {
+            background-color: rgba(76, 175, 80, 0.3) !important; /* 薄い緑色 */
             display: inline-block;
             width: 100%;
-            border-left: 4px solid #4caf50; /* 左側に緑の線を引くとより目立ちます */
         }
-        
-        /* コピペしやすくするための設定 */
-        code { user-select: text !important; }
     </style>
 </head>
 <body>
@@ -25,10 +21,10 @@
     public static void main(String[] args) {
         System.out.println("ここまでは既存のコードです");
 
-<span class="code-highlight-added">        // 【変更後】ここから追加・変更したコード
+<span class="highlight-added">        // 【変更後】ここから追加・変更したコード
         System.out.println("この行が新しく追加されました！");
         int newVariable = 100;</span>
-        
+
         System.out.println("ここからも既存のコードです");
     }
 }</code></pre>
