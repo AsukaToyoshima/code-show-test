@@ -1,35 +1,40 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
+
+    <!-- Prism.js: テーマ & プラグインCSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-highlight/prism-line-highlight.min.css" rel="stylesheet" />
+
+    <!-- カスタムスタイル -->
     <style>
         body { margin: 0; padding: 0; background-color: #2d2d2d; }
         pre { margin: 0 !important; border-radius: 0; border: none; }
-        
-        /* 変更箇所を span タグで囲んだ時のスタイル */
-        .highlight-added {
-            background-color: rgba(76, 175, 80, 0.3) !important; /* 薄い緑色 */
-            display: inline-block;
-            width: 100%;
-        }
+
+        .line-highlight { background: rgba(140, 251, 144, 0.3) !important; }
+        .line-highlight::before,
+        .line-highlight::after { display: none; }
     </style>
 </head>
 <body>
 
-<pre class="language-java"><code>public class Main {
+<!-- data-line="5-7" で5〜7行目をハイライト -->
+<pre class="language-java" data-line="5-7"><code>public class Main {
     public static void main(String[] args) {
         System.out.println("ここまでは既存のコードです");
 
-<span class="highlight-added">        // 【変更後】ここから追加・変更したコード
+        // 【変更後】ここから追加・変更したコード
         System.out.println("この行が新しく追加されました！");
-        int newVariable = 100;</span>
+        int newVariable = 100;
 
         System.out.println("ここからも既存のコードです");
     }
 }</code></pre>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-java.min.js"></script>
+<!-- Prism.js: 本体 & 言語 & プラグイン -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-java.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-highlight/prism-line-highlight.min.js"></script>
 </body>
 </html>
